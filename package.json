@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/cashmere53/mahjong/issues"
   },
-  "homepage": "https://github.com/cashmere53/mahjong#readme"
+  "homepage": "https://github.com/cashmere53/mahjong#readme",
+  "dependencies": {
+    "lodash": "^4.16.6",
+    "moment": "^2.15.2"
+  }
 }
