@@ -19,6 +19,7 @@
   "homepage": "https://github.com/cashmere53/mahjong#readme",
   "dependencies": {
     "lodash": "^4.16.6",
-    "moment": "^2.15.2"
+    "moment": "^2.15.2",
+    "websocket.io": "^0.2.1"
   }
 }

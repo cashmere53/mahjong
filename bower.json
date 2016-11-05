@@ -1,0 +1,18 @@
+{
+  "name": "mahjong",
+  "description": "score sharing tool for mahjong",
+  "main": "index.js",
+  "authors": [
+    "cashmere53 <ict.nurburgring.mikurusaders53@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/cashmere53/mahjong",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
