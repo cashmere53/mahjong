@@ -1,0 +1,19 @@
+{
+  "name": "mahjong",
+  "description": "mahjong scoring tool",
+  "main": "./server/app.js",
+  "authors": [
+    "cashmere53"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/cashmere53/mahjong",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}
