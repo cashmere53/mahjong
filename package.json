@@ -19,5 +19,8 @@
   "dependencies": {
     "lodash": "^4.16.6",
     "moment": "^2.15.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
   }
 }
