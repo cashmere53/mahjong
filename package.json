@@ -1,28 +1,23 @@
 {
   "name": "mahjong",
   "version": "1.0.0",
-  "description": "score sharing tool for mahjong",
-  "main": "index.js",
+  "description": "mahjong scoring tool",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node app.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cashmere53/mahjong.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "cashmere53",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/cashmere53/mahjong/issues"
   },
   "homepage": "https://github.com/cashmere53/mahjong#readme",
   "dependencies": {
-    "express": "^4.14.0",
-    "express-generator": "^4.14.0",
-    "express-ws": "^2.0.0",
     "lodash": "^4.16.6",
-    "moment": "^2.15.2",
-    "websocket.io": "^0.2.1"
+    "moment": "^2.15.2"
   }
 }
