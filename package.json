@@ -2,9 +2,9 @@
   "name": "mahjong",
   "version": "1.0.0",
   "description": "mahjong scoring tool",
-  "main": "Server/app.js",
+  "main": "./server/app.js",
   "scripts": {
-    "test": "node Server/app.js"
+    "test": "node ./server/app.js"
   },
   "repository": {
     "type": "git",
