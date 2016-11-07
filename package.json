@@ -2,9 +2,9 @@
   "name": "mahjong",
   "version": "1.0.0",
   "description": "mahjong scoring tool",
-  "main": "Sever/app.js",
+  "main": "Server/app.js",
   "scripts": {
-    "test": "node Serevr/app.js"
+    "test": "node Server/app.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,8 @@
   "homepage": "https://github.com/cashmere53/mahjong#readme",
   "dependencies": {
     "lodash": "^4.16.6",
-    "moment": "^2.15.2"
+    "moment": "^2.15.2",
+    "websocket.io": "^0.2.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
