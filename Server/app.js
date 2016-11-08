@@ -5,11 +5,9 @@ var fs = require('fs')
 var settings = require('./portSettings')
 console.log(settings)
 
-var ws = require('websocket.io')
 var http = require('http')
 var server = http.createServer()
-var wsServer = ws.attach(server)
-
+var io = require('socket.io')(server)
 
 var dir = __dirname + '/../'
 server.on('request', (req, res) => {
@@ -105,8 +103,12 @@ server.on('request', (req, res) => {
         res.end()
     }
 })
-wsServer.on('connection', (socket) => {
-    socket.on('message', (preData) => {
+io.on('connection', (client) => {
+    client.on('event', (data) => {
+
+    })
+
+    client.on('message', (preData) => {
         var data = JSON.parse(preData)
         var d = new Date()
         data.time = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds()
@@ -117,6 +119,9 @@ wsServer.on('connection', (socket) => {
             client.send(data)
         })
     })
-    socket.on('close', () => {})
+    
+    client.on('disconnect', () => {
+        
+    })
 })
 server.listen(settings.port, settings.host)
