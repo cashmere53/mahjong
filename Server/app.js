@@ -8,7 +8,6 @@ console.log(settings)
 var dir = __dirname + '/../'
 var server = http.createServer()
 server.on('request', (req, res) => {
-    console.log(req.url)
     switch (req.url) {
     case '/style':
         fs.readFile(dir + 'html/style.css', 'utf-8', (err, data) => {
