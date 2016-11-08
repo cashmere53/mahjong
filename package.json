@@ -22,8 +22,10 @@
     "socket.io": "^1.5.1"
   },
   "devDependencies": {
+    "eslint": "^3.9.1",
     "gulp": "^3.9.1",
     "gulp-pug": "^3.1.0",
-    "gulp-stylus": "^2.6.0"
+    "gulp-stylus": "^2.6.0",
+    "tsd": "^0.6.5"
   }
 }
