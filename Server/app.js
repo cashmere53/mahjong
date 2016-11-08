@@ -1,12 +1,17 @@
-var http = require('http')
-var ws = require('websocket.io')
+// var http = require('http')
+// var ws = require('websocket.io')
 var fs = require('fs')
-
+// var server = http.createServer()
 var settings = require('./portSettings')
 console.log(settings)
 
-var dir = __dirname + '/../'
+var ws = require('websocket.io')
+var http = require('http')
 var server = http.createServer()
+var wsServer = ws.attach(server)
+
+
+var dir = __dirname + '/../'
 server.on('request', (req, res) => {
     switch (req.url) {
     case '/':
@@ -53,7 +58,7 @@ server.on('request', (req, res) => {
         break
 
     case '/style':
-        fs.readFile(dir + 'html/style', 'utf-8', (err, data) => {
+        fs.readFile(dir + 'html/style.css', 'utf-8', (err, data) => {
             if (err) {
                 res.writeHead(404, {'Content-Type': 'text/plane'})
                 res.write('Not Found')
@@ -80,20 +85,38 @@ server.on('request', (req, res) => {
         })
         break
 
+    case '/script':
+        fs.readFile(dir + 'html/script.js', 'utf-8', (err, data) => {
+            if (err) {
+                res.writeHead(404, {'Content-Type': 'text/plane'})
+                res.write('Not Found')
+                return res.end
+            }
+
+            res.writeHead(200, {'Content-Type': 'text/javascript'})
+            res.write(data)
+            res.end()
+        })
+        break
+
     default:
         res.writeHead(404, {'Content-Type': 'text/plane'})
         res.write('wrong address')
         res.end()
     }
 })
-server.listen(settings.port, settings.host)
+wsServer.on('connection', (socket) => {
+    socket.on('message', (preData) => {
+        var data = JSON.parse(preData)
+        var d = new Date()
+        data.time = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds()
+        data = JSON.stringify(data)
+        console.log('\033[96m' + data + '\033[39m')
 
-var io = socket.listen(server)
-io.sockets.on('connection', function (client) {
-    client.on('c2s_message', (data) => {
-        io.sockets.emit('s2c_message', {value: data.value})
+        server.clients.foreach(function (client) {
+            client.send(data)
+        })
     })
-    client.on('c2s_broadcast', (data) => {
-        client.broadcast.emit('s2c_message', {value: data.value})
-    })
+    socket.on('close', () => {})
 })
+server.listen(settings.port, settings.host)

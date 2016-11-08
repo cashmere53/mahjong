@@ -2,14 +2,21 @@ doctype html
 html(lang="ja")
     head
         meta(chaset="utf=8")
-        script(type='text/javascript' src='/jquery')
-        script(type='text/javascript' src='/bootstrap')
+        mata(name='viewport' content='width=device-width, minimum-scale=1, maximum-scale=1')
+        meta(name='description' content='')
         link(rel='stylesheet' href='/bootstrap-css')
         link(rel='stylesheet' href='/style')
         title Mahjong Score Sharing Tool
     body
-        h1 Mahjong
-        ul#msg_list
-        form(action='' method='post' onsubmit='return false;')
-            input#message.text(type='text')
-            input#send.button(type='submit' value='send')
+        div#container
+            h1 Mahjong Score Sharing Tool
+            div#chat-area
+                div.input-prepend
+                    span#user-name.add-on
+                    input#textbox(placeholder='what are you doing now?')
+                ul#chat-history.unstyled.row-fluid
+            
+            
+        script(type='text/javascript' src='/jquery')
+        script(type='text/javascript' src='/bootstrap')
+        script(type='text/javascript' src='/script')

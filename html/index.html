@@ -2,17 +2,24 @@
 <html lang="ja">
   <head>
     <meta chaset="utf=8">
-    <script type="text/javascript" src="/jquery"></script>
-    <script type="text/javascript" src="/bootstrap"></script>
+    <mata name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1"></mata>
+    <meta name="description" content="">
     <link rel="stylesheet" href="/bootstrap-css">
+    <link rel="stylesheet" href="/style">
     <title>Mahjong Score Sharing Tool</title>
   </head>
   <body>
-    <h1>Mahjong</h1>
-    <ul id="msg_list"></ul>
-    <form action="" method="post" onsubmit="return false;">
-      <input class="text" id="message" type="text">
-      <input class="button" id="send" type="submit" value="send">
-    </form>
+    <div id="container">
+      <h1>Mahjong Score Sharing Tool</h1>
+      <div id="chat-area">
+        <div class="input-prepend"><span class="add-on" id="user-name"></span>
+          <input id="textbox" placeholder="what are you doing now?">
+        </div>
+        <ul class="unstyled row-fluid" id="chat-history"></ul>
+      </div>
+    </div>
+    <script type="text/javascript" src="/jquery"></script>
+    <script type="text/javascript" src="/bootstrap"></script>
+    <script type="text/javascript" src="/script"></script>
   </body>
 </html>
