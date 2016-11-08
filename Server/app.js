@@ -52,6 +52,20 @@ server.on('request', (req, res) => {
         })
         break
 
+    case '/style':
+        fs.readFile(dir + 'html/style', 'utf-8', (err, data) => {
+            if (err) {
+                res.writeHead(404, {'Content-Type': 'text/plane'})
+                res.write('Not Found')
+                return res.end
+            }
+
+            res.writeHead(200, {'Content-Type': 'text/css'})
+            res.write(data)
+            res.end()
+        })
+        break
+
     case '/jquery':
         fs.readFile(dir + 'bower_components/jquery/dist/jquery.min.js', 'utf-8', (err, data) => {
             if (err) {
