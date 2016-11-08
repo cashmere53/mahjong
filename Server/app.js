@@ -83,6 +83,20 @@ server.on('request', (req, res) => {
         })
         break
 
+    case '/socket.io':
+        fs.readFile(dir + 'node_modules/socket.io/lib/socket.js', 'utf-8', (err, data) => {
+            if (err) {
+                res.writeHead(404, {'Content-Type': 'text/plane'})
+                res.write('Not Found')
+                return res.end
+            }
+
+            res.writeHead(200, {'Content-Type': 'text/javascript'})
+            res.write(data)
+            res.end()
+        })
+        break
+
     case '/script':
         fs.readFile(dir + 'html/script.js', 'utf-8', (err, data) => {
             if (err) {
