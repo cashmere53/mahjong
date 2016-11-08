@@ -23,8 +23,8 @@ server.on('request', (req, res) => {
         })
         break
 
-    case '/style':
-        fs.readFile(dir + 'html/style.css', 'utf-8', (err, data) => {
+    case '/bootstrap':
+        fs.readFile(dir + 'bower_components/bootstrap/dist/js/bootstrap.min.js', 'utf-8', (err, data) => {
             if (err) {
                 res.writeHead(404, {'Content-Type': 'text/plane'})
                 res.write('Not Found')
