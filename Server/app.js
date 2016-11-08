@@ -111,11 +111,11 @@ server.on('request', (req, res) => {
         })
         break
 
-    default:
-        res.writeHead(404, {'Content-Type': 'text/plane'})
-        res.write('wrong address')
-        res.end()
-        break
+    // default:
+    //     res.writeHead(404, {'Content-Type': 'text/plane'})
+    //     res.write('wrong address')
+    //     res.end()
+    //     break
     }
 })
 
