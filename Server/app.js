@@ -31,7 +31,7 @@ server.on('request', (req, res) => {
                 return res.end
             }
 
-            res.writeHead(200, {'Content-Type': 'text/css'})
+            res.writeHead(200, {'Content-Type': 'text/javascript'})
             res.write(data)
             res.end()
         })
