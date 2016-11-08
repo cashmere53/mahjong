@@ -103,25 +103,25 @@ server.on('request', (req, res) => {
         res.end()
     }
 })
-io.on('connection', (client) => {
-    client.on('event', (data) => {
 
+var usrHash = {}
+io.on('connection', (client) => {
+    client.on('connected', (name) => {
+        var msg = name + 'さんが入室しました。'
+        usrHash[client.id] = name
+        io.emit('publish', {value: msg})
     })
 
-    client.on('message', (preData) => {
-        var data = JSON.parse(preData)
-        var d = new Date()
-        data.time = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds()
-        data = JSON.stringify(data)
-        console.log('\033[96m' + data + '\033[39m')
-
-        server.clients.foreach(function (client) {
-            client.send(data)
-        })
+    client.on('publish', (data) => {
+        io.emit('publish', {value: data.value})
     })
     
     client.on('disconnect', () => {
-        
+        if (usrHash[client.id]) {
+            var msg = usrHash[client.id] + 'さんが退出しました。'
+            delete usrHash[client.id]
+            io.emit('publish', {value: msg})
+        }
     })
 })
 server.listen(settings.port, settings.host)
