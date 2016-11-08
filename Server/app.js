@@ -84,7 +84,7 @@ server.on('request', (req, res) => {
         break
 
     case '/socket.io':
-        fs.readFile(dir + 'node_modules/socket.io/lib/socket.js', 'utf-8', (err, data) => {
+        fs.readFile(dir + 'node_modules/socket.io-client/socket.io.js', 'utf-8', (err, data) => {
             if (err) {
                 res.writeHead(404, {'Content-Type': 'text/plane'})
                 res.write('Not Found')
@@ -115,6 +115,7 @@ server.on('request', (req, res) => {
         res.writeHead(404, {'Content-Type': 'text/plane'})
         res.write('wrong address')
         res.end()
+        break
     }
 })
 

@@ -14,12 +14,14 @@
       <div id="chatArea">
         <div class="inputArea"><span id="userName"></span>
           <input id="textbox" placeholder="なにしてる？">
+          <button onclick="publishMessage()">send</button>
         </div>
         <div id="chatHistory"></div>
       </div>
     </div>
     <script type="text/javascript" src="/jquery"></script>
     <script type="text/javascript" src="/bootstrap"></script>
+    <script type="text/javascript" src="/socket.io"></script>
     <script type="text/javascript" src="/script"></script>
   </body>
 </html>

@@ -14,9 +14,11 @@ html(lang="ja")
                 div.inputArea
                     span#userName
                     input#textbox(placeholder='なにしてる？')
+                    button(onclick='publishMessage()') send
                 div#chatHistory
             
             
         script(type='text/javascript' src='/jquery')
         script(type='text/javascript' src='/bootstrap')
+        script(type='text/javascript' src='/socket.io')
         script(type='text/javascript' src='/script')
