@@ -76,6 +76,10 @@ server.listen(settings.port, settings.host)
 
 var io = socket.listen(server)
 io.sockets.on('connection', function (client) {
-    client.on('event', function () {})
-    client.on('disconnect', function () {})
+    client.on('c2s_message', (data) => {
+        io.sockets.emit('s2c_message', {value: data.value})
+    })
+    client.on('c2s_broadcast', (data) => {
+        client.broadcast.emit('s2c_message', {value: data.value})
+    })
 })
