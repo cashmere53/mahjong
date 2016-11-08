@@ -9,6 +9,20 @@ var dir = __dirname + '/../'
 var server = http.createServer()
 server.on('request', (req, res) => {
     switch (req.url) {
+    case '/':
+        fs.readFile(dir + 'html/index.html', 'utf-8', (err, data) => {
+            if (err) {
+                res.writeHead(404, {'Content-Type': 'text/plane'})
+                res.write('Not Found')
+                return res.end
+            }
+
+            res.writeHead(200, {'Content-Type': 'text/html'})
+            res.write(data)
+            res.end()
+        })
+        break
+
     case '/style':
         fs.readFile(dir + 'html/style.css', 'utf-8', (err, data) => {
             if (err) {
@@ -38,18 +52,9 @@ server.on('request', (req, res) => {
         break
 
     default:
-        fs.readFile(dir + 'html/index.html', 'utf-8', (err, data) => {
-            if (err) {
-                res.writeHead(404, {'Content-Type': 'text/plane'})
-                res.write('Not Found')
-                return res.end
-            }
-
-            res.writeHead(200, {'Content-Type': 'text/html'})
-            res.write(data)
-            res.end()
-        })
-        break
+        res.writeHead(404, {'Content-Type': 'text/plane'})
+        res.write('wrong address')
+        res.end()
     }
 })
 server.listen(settings.port, settings.host)
