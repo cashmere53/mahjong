@@ -1,5 +1,5 @@
 var http = require('http')
-var socket = require('socket.io')
+var ws = require('websocket.io')
 var fs = require('fs')
 
 var settings = require('./portSettings')

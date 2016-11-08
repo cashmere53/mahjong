@@ -5,7 +5,11 @@ html(lang="ja")
         script(type='text/javascript' src='/jquery')
         script(type='text/javascript' src='/bootstrap')
         link(rel='stylesheet' href='/bootstrap-css')
+        link(rel='stylesheet' href='/style')
         title Mahjong Score Sharing Tool
     body
         h1 Mahjong
-        p hello, world!
+        ul#msg_list
+        form(action='' method='post' onsubmit='return false;')
+            input#message.text(type='text')
+            input#send.button(type='submit' value='send')
