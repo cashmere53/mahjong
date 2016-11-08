@@ -37,6 +37,21 @@ server.on('request', (req, res) => {
         })
         break
 
+    case '/bootstrap-css':
+        // fs.readFile(dir + 'bower_components/bootstrap/dist/css/bootstrap.min.css', 'utf-8', (err, data) => {
+        fs.readFile(dir + 'bootstrap_readable.min.css', 'utf-8', (err, data) => {
+            if (err) {
+                res.writeHead(404, {'Content-Type': 'text/plane'})
+                res.write('Not Found')
+                return res.end
+            }
+
+            res.writeHead(200, {'Content-Type': 'text/css'})
+            res.write(data)
+            res.end()
+        })
+        break
+
     case '/jquery':
         fs.readFile(dir + 'bower_components/jquery/dist/jquery.min.js', 'utf-8', (err, data) => {
             if (err) {
