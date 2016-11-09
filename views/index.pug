@@ -19,13 +19,34 @@ html(lang="ja")
                         span.input-group-btn
                             button.btn.btn-default(type='button' onclick='publishMessage()') send
                 div#chatHistory
-            div.container
+
+            div#windButtons.container
                 ul.pagination.pagination-lg
                     li.wind.active: a(href='#') 東
                     li.wind: a(href='#') 南
                     li.wind: a(href='#') 西
                     li.wind: a(href='#') 北
-
+            
+            div#scoreTable.container
+                table.table.table-striped.table-hover
+                    thead
+                        tr
+                            th player
+                            th score
+                    tbody
+                        tr
+                            td 1
+                            td 25000
+                        tr
+                            td 2
+                            td 25000
+                        tr
+                            td 3
+                            td 25000
+                        tr
+                            td 4
+                            td 25000
+                        
             
             
         script(type='text/javascript' src='/jquery')
