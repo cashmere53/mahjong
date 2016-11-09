@@ -32,3 +32,10 @@ var addMessage = function (msg) {
 var myName = Math.floor(Math.random() * 100)
 addMessage('ようこそ、' + myName + 'さん！')
 start(myName)
+
+$(function () {
+    $('.wind').click(function (e) {
+        $('.wind').removeClass('active')
+        $(this).addClass('active')
+    })
+})
