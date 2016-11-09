@@ -7,6 +7,7 @@ socketio.on('publish', function (data) {
 socketio.on('disconnect', function () {})
 
 var start = function (name) {
+    $('#userName').html(name)
     socketio.emit('connected', name)
 }
 

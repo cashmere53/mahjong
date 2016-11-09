@@ -12,9 +12,12 @@
     <div id="container">
       <h1>Mahjong Score Sharing Tool</h1>
       <div id="chatArea">
-        <div class="inputArea"><span id="userName"></span>
-          <input id="textbox" placeholder="なにしてる？">
-          <button onclick="publishMessage()">send</button>
+        <div class="form-group">
+          <label class="control-label">Input</label>
+          <div class="input-group"><span class="input-group-addon" id="userName"></span>
+            <input class="form-control" id="textbox" type="text" placeholder="なにしてる？"><span class="input-group-btn">
+              <button class="btn btn-default" type="button" onclick="publishMessage()">send</button></span>
+          </div>
         </div>
         <div id="chatHistory"></div>
       </div>

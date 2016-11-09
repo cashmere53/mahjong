@@ -125,6 +125,7 @@ io.on('connection', (client) => {
         var msg = name + 'さんが入室しました。'
         usrHash[client.id] = name
         io.emit('publish', {value: msg})
+        console.log(name + 'さんが入室しました。')
     })
 
     client.on('publish', (data) => {

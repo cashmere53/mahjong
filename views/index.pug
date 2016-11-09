@@ -11,10 +11,13 @@ html(lang="ja")
         div#container
             h1 Mahjong Score Sharing Tool
             div#chatArea
-                div.inputArea
-                    span#userName
-                    input#textbox(placeholder='なにしてる？')
-                    button(onclick='publishMessage()') send
+                div.form-group
+                    label.control-label Input
+                    div.input-group
+                        span.input-group-addon#userName
+                        input#textbox.form-control(type='text' placeholder='なにしてる？')
+                        span.input-group-btn
+                            button.btn.btn-default(type='button' onclick='publishMessage()') send
                 div#chatHistory
             
             
