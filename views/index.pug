@@ -33,21 +33,22 @@ html(lang="ja")
                         tr
                             th player
                             th score
-                    tbody
-                        tr
-                            td 1
-                            td 25000
-                        tr
-                            td 2
-                            td 25000
-                        tr
-                            td 3
-                            td 25000
-                        tr
-                            td 4
-                            td 25000
-                        
+                            th diff
+                    tbody#scoreTableBody
             
+            ul.nav.nav-tabs
+                li: a(href='#ron' data-toggle='tab' aria-expanded='false') Ron
+                li: a(href='#p-tsumo' data-toggle='tab' aria-expanded='false') P-Tsumo
+                li: a(href='#c-tsumo' data-toggle='tab' aria-expanded='false') C-Tsumo
+            div#myTabContent.tab-content
+                div#ron.tab-pane.fade.active
+                    div.form-group
+                        label.control-label(for='inputLarge') Score
+                        input#inputLarge.form-control.input-lg(type='text')
+                div#p-tsumo.tab-pane.fade
+                    p world
+                div#c-tsumo.tab-pane.fade
+                    p mons
             
         script(type='text/javascript' src='/jquery')
         script(type='text/javascript' src='/bootstrap')

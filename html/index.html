@@ -35,27 +35,30 @@
             <tr>
               <th>player</th>
               <th>score</th>
+              <th>diff</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>25000</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>25000</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>25000</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>25000</td>
-            </tr>
-          </tbody>
+          <tbody id="scoreTableBody"></tbody>
         </table>
+      </div>
+      <ul class="nav nav-tabs">
+        <li><a href="#ron" data-toggle="tab" aria-expanded="false">Ron</a></li>
+        <li><a href="#p-tsumo" data-toggle="tab" aria-expanded="false">P-Tsumo</a></li>
+        <li><a href="#c-tsumo" data-toggle="tab" aria-expanded="false">C-Tsumo</a></li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade active" id="ron">
+          <div class="form-group">
+            <label class="control-label" for="inputLarge">Score</label>
+            <input class="form-control input-lg" id="inputLarge" type="text">
+          </div>
+        </div>
+        <div class="tab-pane fade" id="p-tsumo">
+          <p>world</p>
+        </div>
+        <div class="tab-pane fade" id="c-tsumo">
+          <p>mons</p>
+        </div>
       </div>
     </div>
     <script type="text/javascript" src="/jquery"></script>
