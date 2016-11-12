@@ -83,7 +83,6 @@ var rewriteScore = function (data) {
         str += '</tr>'
         $('#scoreTableBody').append(str)
     }
-    
 }
 
 // var msgArea = document.getElementById('chatHistory')

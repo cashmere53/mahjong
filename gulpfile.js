@@ -16,7 +16,7 @@ gulp.task('watch', function () {
 gulp.task('pug', function () {
     return gulp.src(path.pug_file)
     .pipe(pug({
-        pretty: true
+        // pretty: true
     }))
     .pipe(gulp.dest(dest_path))
 })
