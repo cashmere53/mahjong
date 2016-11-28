@@ -1,5 +1,5 @@
-// var socketio = io.connect('http://localhost:3000')
-var socketio = io.connect('http://192.168.0.5:3000')
+var socketio = io.connect('http://localhost:3000')
+// var socketio = io.connect('http://192.168.0.5:3000')
 
 socketio.on('connected', function (name) {})
 socketio.on('publish', function (data) {
